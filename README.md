@@ -1,2 +1,3 @@
 # LateXCodeGenerator
-Generates LateX code based on drawn equations
+Project aims to provide easy-to-use graphical interface for [MathReader](https://github.com/carolreis/mathreader) API.
+------------
