@@ -6,7 +6,7 @@ window.title('wpisz równanie')
 
 canvas = tk.Canvas(window, width=600, height=400, bg = 'grey')
 canvas.pack()
-
+# cooo
 
 def rysowanie_hud():
     # linie pomocnicze
