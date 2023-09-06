@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import Image, ImageGrab
 
 window = tk.Tk()
 window.geometry('600x400')
@@ -6,7 +7,16 @@ window.title('wpisz równanie')
 
 canvas = tk.Canvas(window, width=600, height=400, bg = 'grey')
 canvas.pack()
-# cooo
+
+# zapisywanie obrazka do renderowania kodu latexowego
+def save():
+    x1 = window.winfo_x() + canvas.winfo_x()
+    y1 = window.winfo_y() + canvas.winfo_y() + 125
+
+    x2 = x1 + 600 # canvas.winfo_reqwidth()
+    y2 = y1 + 150 # canvas.winfo_reqheight() - 125
+
+    ImageGrab.grab().crop((x1, y1, x2, y2)).save('test.jpg')
 
 def rysowanie_hud():
     # linie pomocnicze
@@ -15,7 +25,7 @@ def rysowanie_hud():
     # tekst u góry
     canvas.create_text((250, 50), text = 'Napisz matematyczne sformułowanie:', width=100)
     # przycisk do renderowania kodu
-    canvas.create_window((500, 350), window = tk.Button(window, text = 'Render'))
+    canvas.create_window((500, 350), window = tk.Button(window, text = 'Render', command = save))
     # przycisk restar/clear
     canvas.create_window((200, 350), window=tk.Button(window, text='Clear', command=clear))
 
@@ -62,6 +72,8 @@ class draw:
     def reset(self, e):
         self.old_x = None
         self.old_y = None
+
+
 
 
 draw(canvas)
