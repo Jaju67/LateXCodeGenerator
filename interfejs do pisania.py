@@ -1,19 +1,33 @@
 import tkinter as tk
+
 window = tk.Tk()
 window.geometry('600x400')
 window.title('wpisz równanie')
 
 canvas = tk.Canvas(window, width=600, height=400, bg = 'grey')
 canvas.pack()
-# linie pomocnicze
-canvas.create_line((0, 125, 600, 125), dash=(5, 1))
-canvas.create_line((0, 275, 600, 275), dash=(5, 1))
-# tekst u góry
-canvas.create_text((250, 50), text = 'Napisz matematyczne sformułowanie:', width=100)
-# przycisk do renderowania kodu
-canvas.create_window((500, 350), window = tk.Button(window, text = 'Render'))
 
-# jak nazwa wskazuje - malowanie
+
+def rysowanie_hud():
+    # linie pomocnicze
+    canvas.create_line((0, 125, 600, 125), dash=(5, 1))
+    canvas.create_line((0, 275, 600, 275), dash=(5, 1))
+    # tekst u góry
+    canvas.create_text((250, 50), text = 'Napisz matematyczne sformułowanie:', width=100)
+    # przycisk do renderowania kodu
+    canvas.create_window((500, 350), window = tk.Button(window, text = 'Render'))
+    # przycisk restar/clear
+    canvas.create_window((200, 350), window=tk.Button(window, text='Clear', command=clear))
+
+# restart/clear
+def clear():
+    canvas.delete('all')
+    rysowanie_hud()
+
+# pierwsze narysowanie hud
+rysowanie_hud()
+
+# stare malowanie, które słabo działa
 # def malowanie(event):
 #    x = event.x
 #    y = event.y
