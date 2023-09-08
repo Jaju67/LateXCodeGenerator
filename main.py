@@ -10,6 +10,11 @@ window = tk.Tk()
 window.geometry('600x400')
 window.title('LateXCodeGenerator')
 
+# ikonka
+icon = tk.PhotoImage(file = 'LXCG.png')
+window.wm_iconphoto(False, icon)
+
+
 canvas = tk.Canvas(window, width=600, height=400, bg = 'grey')
 canvas.pack()
 
