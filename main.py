@@ -1,9 +1,21 @@
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae urna fringilla, porttitor tellus eu, venenatis libero. Pellentesque sed velit placerat, euismod lorem id, commodo nulla. Aliquam consequat mi a justo vehicula eleifend. Mauris eu lobortis libero, cursus rutrum velit. Mauris vel blandit tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta et risus at venenatis. Vivamus auctor hendrerit feugiat. Nullam mattis mollis urna, ut dictum eros pharetra id. Fusce non tortor eget lorem ultricies porttitor.
+import tkinter as tk
+from PIL import Image, ImageDraw
+import PIL
 
-Proin id erat rutrum, euismod dolor at, ullamcorper erat. Aliquam ullamcorper vulputate lacinia. Aenean egestas rutrum ullamcorper. Proin quis elementum leo, sit amet pharetra nisl. Donec pharetra ac risus ultricies faucibus. Pellentesque faucibus euismod mi at accumsan. Ut risus ligula, varius vel massa eget, ornare suscipit orci.
+import interface
+import interpreterapi
 
-Aliquam quis venenatis ex. Nam erat mi, luctus id arcu ut, faucibus imperdiet enim. Fusce eget lorem sodales, ornare elit nec, consectetur purus. Etiam a dolor ornare, sagittis augue nec, placerat tortor. Nunc pretium nunc id diam malesuada, ac maximus urna tincidunt. Mauris luctus vehicula aliquam. Aenean neque dolor, pretium eu egestas eget, ultricies sit amet orci. Nullam commodo fermentum lorem at accumsan. Vestibulum convallis magna sit amet laoreet facilisis. Sed non fringilla purus, in eleifend diam. Sed venenatis leo sit amet justo tincidunt lacinia. Morbi lobortis aliquam arcu. Cras vitae iaculis erat. Vestibulum porta eleifend nunc sit amet venenatis.
 
-Nam sed euismod nunc, a feugiat est. Etiam ipsum orci, interdum non tincidunt id, accumsan at urna. Donec ac lorem nec nunc ornare scelerisque eget sed felis. Mauris vel dolor finibus, ullamcorper massa vitae, semper justo. Morbi in dui volutpat, facilisis lorem a, tincidunt massa. Integer consectetur lorem et tortor consectetur, sed maximus ante ornare. Etiam feugiat fermentum tristique. Aenean lectus ligula, malesuada id turpis non, faucibus rhoncus urna. Nunc congue risus dolor, eget dictum lorem sollicitudin a. In cursus euismod dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam vehicula metus ut lectus dictum eleifend. Vestibulum consectetur faucibus urna ut sagittis.
+window = tk.Tk()
+window.geometry('600x400')
+window.title('wpisz równanie')
 
-Proin in viverra est. Sed laoreet sed lorem non fermentum. Aenean nisi tellus, maximus vel mauris in, imperdiet aliquet mauris. Quisque ac quam pulvinar, faucibus ex vel, ornare erat. Fusce magna lectus, ultrices quis purus sodales, lacinia consectetur velit. Nulla blandit sagittis pretium. Ut turpis purus, porta et nibh eget, mollis tristique ligula. Suspendisse sed facilisis purus. Nullam vel arcu justo. In consequat pellentesque iaculis. Donec enim nisl, eleifend sed lectus vehicula, tristique vehicula lorem. Aliquam pulvinar orci at posuere porttitor. Quisque lobortis volutpat fringilla. Nunc in aliquet tellus. Curabitur malesuada posuere lacus eu sollicitudin. Etiam eu massa 
+canvas = tk.Canvas(window, width=600, height=400, bg = 'grey')
+canvas.pack()
+
+image = PIL.Image.new('RGB', (600, 400), (255, 255, 255))
+
+interface.rysowanie_hud()
+
+interface.draw(canvas, image)
+window.mainloop()
