@@ -51,14 +51,15 @@ class draw:
 
 def rysowanie_hud(canvas, image, window):
     # linie pomocnicze
-    canvas.create_line((0, 125, 600, 125), dash=(5, 1))
-    canvas.create_line((0, 275, 600, 275), dash=(5, 1))
+    canvas.create_line((0, 100, 600, 100), dash=(5, 1))
+    canvas.create_line((0, 300, 600, 300), dash=(5, 1))
     # tekst u góry
-    canvas.create_text((250, 50), text='Napisz matematyczną formułę:', width=100)
+    canvas.create_text((300, 50), text='Write your mathematical formula below:', font= ('Calibri', 30), width = 600)
     # przycisk do renderowania kodu
-    canvas.create_window((500, 350), window=tk.Button(window, text='Render',
+    canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30), bg = 'purple', activebackground = 'green',
                                                       command=lambda: [image.show(), image.save('image.png')]))
     # przycisk restart/clear
-    canvas.create_window((200, 350), window=tk.Button(window, text='Clear', command = lambda: [canvas.delete('all') , ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
+    canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30), bg = 'purple', activebackground = 'green',
+                                                      command = lambda: [canvas.delete('all'), ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
 
 
