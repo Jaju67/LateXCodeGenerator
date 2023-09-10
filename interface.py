@@ -1,24 +1,10 @@
 import tkinter as tk
 from PIL import Image, ImageDraw
 import PIL
+import interpreterapi
 
-
-# stare malowanie, które słabo działa
-# def malowanie(event):
-#    x = event.x
-#    y = event.y
-#    canvas.create_oval((x - brush_size / 2, y - brush_size / 2, x + brush_size / 2, y + brush_size / 2), fill = 'black')
-
-# średnica w pikselach
-# brush_size = 4
-
-# malowanie gdy się rusza pointer
-# canvas.bind('<B1-Motion>', malowanie)
-# malowanie gdy się nie rusza
-# canvas.bind('<Button-1>', malowanie)
-
-# lepsze malowanie
-
+def resize_window(window):
+    window.geometry('1000x800')
 
 class draw:
     def __init__(self, canvas, image):
@@ -56,10 +42,14 @@ def rysowanie_hud(canvas, image, window):
     # tekst u góry
     canvas.create_text((300, 50), text='Write your mathematical formula below:', font= ('Calibri', 30), width = 600)
     # przycisk do renderowania kodu
-    canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30), bg = 'purple', activebackground = 'green',
-                                                      command=lambda: [image.show(), image.save('image.png')]))
+    canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30),
+                                                      bg = 'purple', activebackground = 'green',
+                                                      command=lambda: [image.show(), image.save('image.png'), interpreterapi.imageRecognition('image.png', 'out_image.png')]))
     # przycisk restart/clear
-    canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30), bg = 'purple', activebackground = 'green',
-                                                      command = lambda: [canvas.delete('all'), ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
+    canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30),
+                                                     bg = 'purple', activebackground = 'green',
+                                                     command = lambda: [canvas.delete('all'), ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
 
-
+    canvas.create_window((300, 350), window=tk.Button(window, text='Resize', font=('Calibri', 30),
+                                                     bg='purple', activebackground='green',
+                                                     command=lambda: resize_window(window)))
