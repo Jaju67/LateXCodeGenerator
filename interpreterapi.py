@@ -13,6 +13,11 @@ def imageRecognition(input_image_path, output_image_path):
   except:
     raise Exception("imageRecognition : invalid image path")
 
-  expression, img = recognizer.recognize()                                #-D 250 -> Setting dpi to 250 ; "-bg","Transparent" -> setting background to be transparent
+  try:
+    expression, img = recognizer.recognize()
+  except:
+    preview("$$" + 'Formula\;not\;recognized, try\;again' + "$$", viewer = "file", filename = output_image_path, dvioptions=["-T", "tight", "-z", "0", "--truecolor", "-D 250","-bg","Transparent"])
+    return '🍪'
+                                                                  #-D 250 -> Setting dpi to 250 ; "-bg","Transparent" -> setting background to be transparent
   preview("$$" + expression + "$$", viewer = "file", filename = output_image_path, dvioptions=["-T", "tight", "-z", "0", "--truecolor", "-D 250","-bg","Transparent"])
   return expression     # the '$$' before and after expression are necessery

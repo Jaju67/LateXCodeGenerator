@@ -2,8 +2,8 @@ import tkinter as tk
 from PIL import Image, ImageDraw
 from outwindow import outputWindow
 
-def resize_window(window):
-    window.geometry('1000x800')
+#def resize_window(window):
+#    window.geometry('1000x800')
 
 class draw:
     def __init__(self, canvas, image):
@@ -55,6 +55,6 @@ def rysowanie_hud(canvas, image, window):
                                                      bg = 'purple', activebackground = 'green',
                                                      command = lambda: [canvas.delete('all'), ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
     # 'Resize' button
-    canvas.create_window((300, 350), window=tk.Button(window, text='Resize', font=('Arial Bold', 16),
-                                                     bg='purple', activebackground='green',
-                                                     command=lambda: resize_window(window)))
+    #canvas.create_window((300, 350), window=tk.Button(window, text='Resize', font=('Arial Bold', 16),
+    #                                                 bg='purple', activebackground='green',
+    #                                                 command=lambda: resize_window(window)))

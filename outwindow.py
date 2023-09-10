@@ -21,16 +21,19 @@ class outputWindow:
         imageLabel = ttk.Label(self.outWindow, image = self.image)                                                          #Import and display LateX image 
         imageLabel.pack()
 
-        textLabel = ttk.Label(self.outWindow, text = 'LateX code: ' + self.latexCode + ' ',font=("Arial Bold", 16))         #Display LateX code 
-        textLabel.pack()
+        if(self.latexCode == '🍪'):
+            pass
+        else:
+            textLabel = ttk.Label(self.outWindow, text = 'LateX code: ' + self.latexCode + ' ',font=("Arial Bold", 16))         #Display LateX code 
+            textLabel.pack()
         
-        def buttonCopy():                                                                                                   #Copy button display and its functionality
-            self.outWindow.clipboard_clear()
-            self.outWindow.clipboard_append(self.latexCode)
+            def buttonCopy():                                                                                                   #Copy button display and its functionality
+                self.outWindow.clipboard_clear()
+                self.outWindow.clipboard_append(self.latexCode)
         
-        copyButton = tk.Button(self.outWindow, text = 'Copy',
-                                font = ('Arial Bold', 16),
-                                bg = 'purple',
-                                activebackground = 'green',
-                                command = buttonCopy)
-        copyButton.pack()
+            copyButton = tk.Button(self.outWindow, text = 'Copy',
+                                    font = ('Arial Bold', 16),
+                                    bg = 'purple',
+                                    activebackground = 'green',
+                                    command = buttonCopy)
+            copyButton.pack()
