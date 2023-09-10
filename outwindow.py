@@ -5,13 +5,13 @@ from interpreterapi import imageRecognition
 class outputWindow:
 
     def __init__(self, inputImagePath, windowNumber):       
-        self.outWindow = tk.Tk()
-        self.outWindow.title('Output ' + str(windowNumber))
-        self.imagePath = 'output_image' + str(windowNumber)
+        self.outWindow = tk.Toplevel()
+        self.outWindow.title('Output')
+        self.imagePath = 'output_image' + str(windowNumber) + '.png'
         self.latexCode = imageRecognition(inputImagePath, self.imagePath)
-
-        # self.icon = tk.PhotoImage(file = 'LXCG.png')
-        # self.outWindow.wm_iconphoto(False, icon)
+        self.icon = tk.PhotoImage(file = 'LXCG.png')
+        self.outWindow.wm_iconphoto(False, self.icon)
+        
         self.widgets()
         self.outWindow.mainloop()
 

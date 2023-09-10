@@ -40,10 +40,17 @@ def rysowanie_hud(canvas, image, window):
     canvas.create_line((0, 300, 600, 300), dash=(5, 1))
     # tekst u góry
     canvas.create_text((300, 50), text='Write your mathematical formula below:', font= ('Calibri', 30), width = 600)
+
+    #def funkcji wywołującej okienko z wynikiem
+    def show():
+        #image.show()
+        image.save('drawnImage.png')
+        windowInstance = outputWindow('drawnImage.png', 1)
+
     # przycisk do renderowania kodu
     canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30),
                                                       bg = 'purple', activebackground = 'green',
-                                                      command=lambda: [image.save('image.png'), outputWindow('image.png', 1)]))
+                                                      command=show))
     # przycisk restart/clear
     canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30),
                                                      bg = 'purple', activebackground = 'green',
