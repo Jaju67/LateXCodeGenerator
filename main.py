@@ -13,7 +13,7 @@ window.geometry(str(set_width)+'x'+str(set_height))
 window.title('LateXCodeGenerator')
 
 
-# ikonka
+# thumbnail icon
 icon = tk.PhotoImage(file = 'LXCG.png')
 window.wm_iconphoto(False, icon)
 
