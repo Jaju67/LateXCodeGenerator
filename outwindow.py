@@ -4,10 +4,10 @@ from interpreterapi import imageRecognition
 
 class outputWindow:
 
-    def __init__(self, inputImagePath, windowNumber):       
-        self.outWindow = tk.Toplevel()          #'Toplevel' indicates that the window will not be a main window
+    def __init__(self, inputImagePath):       
+        self.outWindow = tk.Toplevel(bg = '#d9d9d9')          #'Toplevel' indicates that the window will not be a main window
         self.outWindow.title('Output')
-        self.imagePath = 'output_image' + str(windowNumber) + '.png'
+        self.imagePath = 'generatedImage.png'
         self.latexCode = imageRecognition(inputImagePath, self.imagePath)
 
         self.icon = tk.PhotoImage(file = 'LXCG.png')                                                                        #Import project icon
@@ -25,7 +25,12 @@ class outputWindow:
         textLabel.pack()
         
         def buttonCopy():                                                                                                   #Copy button display and its functionality
-            self.outWindow.clipboard_clear
+            self.outWindow.clipboard_clear()
             self.outWindow.clipboard_append(self.latexCode)
-        copyButton = ttk.Button(self.outWindow, text = 'Copy', command = buttonCopy)
+        
+        copyButton = tk.Button(self.outWindow, text = 'Copy',
+                                font = ('Arial Bold', 16),
+                                bg = 'purple',
+                                activebackground = 'green',
+                                command = buttonCopy)
         copyButton.pack()
