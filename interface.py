@@ -1,7 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageDraw
-import PIL
-import interpreterapi
+from outwindow import outputWindow
 
 def resize_window(window):
     window.geometry('1000x800')
@@ -44,7 +43,7 @@ def rysowanie_hud(canvas, image, window):
     # przycisk do renderowania kodu
     canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30),
                                                       bg = 'purple', activebackground = 'green',
-                                                      command=lambda: [image.show(), image.save('image.png'), interpreterapi.show('image.png', 1)]))
+                                                      command=lambda: [image.save('image.png'), outputWindow('image.png', 1)]))
     # przycisk restart/clear
     canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30),
                                                      bg = 'purple', activebackground = 'green',

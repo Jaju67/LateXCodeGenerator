@@ -1,13 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
+from interpreterapi import imageRecognition
 
 class outputWindow:
 
-    def __init__(self, latexCode, imagePath, name = 'Output'):       
+    def __init__(self, inputImagePath, windowNumber):       
         self.outWindow = tk.Tk()
-        self.outWindow.title(str(name))
-        self.latexCode = latexCode
-        self.imagePath = imagePath
+        self.outWindow.title('Output ' + str(windowNumber))
+        self.imagePath = 'output_image' + str(windowNumber)
+        self.latexCode = imageRecognition(inputImagePath, self.imagePath)
+
         # self.icon = tk.PhotoImage(file = 'LXCG.png')
         # self.outWindow.wm_iconphoto(False, icon)
         self.widgets()

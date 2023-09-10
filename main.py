@@ -3,8 +3,6 @@ from PIL import Image, ImageDraw
 import PIL
 
 import interface
-# import interpreterapi
-import interpreterapi
 
 # starting size of the interface (in pixels)
 set_width = 600
