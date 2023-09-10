@@ -8,8 +8,8 @@ class outputWindow:
         self.outWindow.title(str(name))
         self.latexCode = latexCode
         self.imagePath = imagePath
-        icon = tk.PhotoImage(file = 'LXCG.png')
-        self.outWindow.wm_iconphoto(False, icon)
+        # self.icon = tk.PhotoImage(file = 'LXCG.png')
+        # self.outWindow.wm_iconphoto(False, icon)
         self.widgets()
         self.outWindow.mainloop()
 

@@ -44,7 +44,7 @@ def rysowanie_hud(canvas, image, window):
     # przycisk do renderowania kodu
     canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Calibri', 30),
                                                       bg = 'purple', activebackground = 'green',
-                                                      command=lambda: [image.show(), image.save('image.png'), interpreterapi.imageRecognition('image.png', 'out_image.png')]))
+                                                      command=lambda: [image.show(), image.save('image.png'), interpreterapi.show('image.png', 1)]))
     # przycisk restart/clear
     canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Calibri', 30),
                                                      bg = 'purple', activebackground = 'green',
