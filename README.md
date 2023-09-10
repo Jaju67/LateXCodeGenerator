@@ -30,3 +30,8 @@ Then download all files into a folder, run main.py and enjoy your latex code wri
 
 ### Works both on linux and windows!!!
 
+
+
+### Next steps:
+- implementing eraser
+- repairing resize
