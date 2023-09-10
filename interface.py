@@ -21,7 +21,7 @@ class draw:
     def paint(self, e):
         if self.old_x and self.old_y:
             # Canvas drawing
-            self.canvas.create_line(self.old_x, self.old_y, e.x, e.y, width=self.brush_size, fill='green',
+            self.canvas.create_line(self.old_x, self.old_y, e.x, e.y, width=self.brush_size, fill='#090736',
                                     capstyle='round', smooth=True)
             # Drawing in 'image' file
             self.draw_image.line([(self.old_x, self.old_y), (e.x, e.y)], fill='black', width=self.brush_size)
@@ -39,7 +39,7 @@ def rysowanie_hud(canvas, image, window):
     canvas.create_line((0, 100, 600, 100), dash=(5, 1))
     canvas.create_line((0, 300, 600, 300), dash=(5, 1))
     # upper text
-    canvas.create_text((300, 50), text='Write your mathematical formula below:', font= ('Arial Bold', 30), width = 600)
+    canvas.create_text((300, 50), text='Write your mathematical formula below:', font= ('Arial Bold', 22), width = 600)
 
     #definition of a 'Render' button function
     def show():
@@ -47,14 +47,14 @@ def rysowanie_hud(canvas, image, window):
         windowInstance = outputWindow('drawnImage.png')
 
     # 'Render' button
-    canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Arial Bold', 30),
+    canvas.create_window((500, 350), window=tk.Button(window, text='Render', font= ('Arial Bold', 16),
                                                       bg = 'purple', activebackground = 'green',
                                                       command=show))
     # 'Clear' button
-    canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Arial Bold', 30),
+    canvas.create_window((75, 350), window=tk.Button(window, text='Clear', font= ('Arial Bold', 16),
                                                      bg = 'purple', activebackground = 'green',
                                                      command = lambda: [canvas.delete('all'), ImageDraw.Draw(image).rectangle([(0, 0), (800, 600)], fill='white'), rysowanie_hud(canvas, image, window)]))
     # 'Resize' button
-    canvas.create_window((300, 350), window=tk.Button(window, text='Resize', font=('Arial Bold', 30),
+    canvas.create_window((300, 350), window=tk.Button(window, text='Resize', font=('Arial Bold', 16),
                                                      bg='purple', activebackground='green',
                                                      command=lambda: resize_window(window)))

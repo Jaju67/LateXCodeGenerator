@@ -5,7 +5,7 @@ from interpreterapi import imageRecognition
 class outputWindow:
 
     def __init__(self, inputImagePath):       
-        self.outWindow = tk.Toplevel(bg = '#d9d9d9')          #'Toplevel' indicates that the window will not be a main window
+        self.outWindow = tk.Toplevel()          #'Toplevel' indicates that the window will not be a main window
         self.outWindow.title('Output')
         self.imagePath = 'generatedImage.png'
         self.latexCode = imageRecognition(inputImagePath, self.imagePath)
