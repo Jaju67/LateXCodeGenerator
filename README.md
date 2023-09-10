@@ -16,7 +16,7 @@ Then download all files into a folder, run main.py and enjoy your latex code wri
 
 -> `Clear` - makes it all go away, you can start drawing from the beginning
 
--> `Resize` - you can choose from up to two different sizes of the window
+-> `Resize` - (work in progress) you can choose from up to two different sizes of the window
 
 -> `Render` - this is where the magic happens, send everything that you drawn into the A.I.'s mouth and receive a latex interpretation with an option to copy to your clipboard (you will still need to use "$$" or "$")
 
@@ -30,3 +30,8 @@ Then download all files into a folder, run main.py and enjoy your latex code wri
 
 ### Works both on linux and windows!!!
 
+
+
+### Next steps:
+- implementing eraser
+- repairing resize
