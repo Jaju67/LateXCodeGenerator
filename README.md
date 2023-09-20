@@ -22,10 +22,9 @@ Then download all files into a folder, run main.py and enjoy your latex code wri
 
 ------------
 1. try not to intersect written letters/mathematical symbols with eachother
-![nocrossing](https://github.com/Jaju67/LateXCodeGenerator/assets/133958136/199e2357-cdcb-4cb0-8e89-c8b8b77d87a7)
 
-3. don't make any gaps within your letters/symbols!
-![nogaps](https://github.com/Jaju67/LateXCodeGenerator/assets/133958136/3e6ecd06-15ab-4e69-b076-2ce2940fd16e)
+
+2. don't make any gaps within your letters/symbols!
 
 
 ### Works both on linux and windows!!!
